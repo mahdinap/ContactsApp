@@ -1,0 +1,42 @@
+.container{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    padding: 22px;
+    box-shadow: rgba(30, 27, 75, 0.08) 0px 1px 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.btns{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+
+}
+.btns button{
+    width: 100%;
+    
+}
+.idField{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+.nameField{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+}
+.avatar{
+    background-color: red;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 2rem;
+    color: white;
+
+}

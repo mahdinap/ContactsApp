@@ -1,0 +1,21 @@
+button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+.primary {
+  background-color: rgb(79, 70, 229);
+  color: white;
+}
+
+.danger {
+  background-color: rgb(243, 8, 23);
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: #1e1b4b;
+}

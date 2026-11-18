@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  /* border: 1px solid black; */
+  padding: 6px;
+  border-radius: 8px;
+  background-color: white;
+}
+.container:focus-within {
+  outline: 2px solid #6366f1;
+}
+.input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  outline: none;
+  border: none;
+}
+
+.icon {
+  background-color: white;
+}
