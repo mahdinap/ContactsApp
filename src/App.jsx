@@ -18,7 +18,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         email:"",
 
     })
-    
+
 function editContact(contact) {
     setSelectedContact(contact);
     setContact(contact);
@@ -38,8 +38,8 @@ function editContact(contact) {
         id: crypto.randomUUID()
     };
 
-    
-      setContacts((contacts)=>([...contacts,contact]))
+    console.log("New Contact:", newContact);
+      setContacts((contacts)=>([...contacts,newContact]))
       setContact({
         firstname:"",
         lastname:"",
@@ -62,16 +62,20 @@ function editContact(contact) {
         )
     );
 }
-    
+    function deleteContact(id) {
+  setContacts((contacts) =>
+    contacts.filter((item) => item.id !== id)
+  );
+}
     
   return (
    <>
    <Navbar/>
    <main className="mainContainer">
-    <Header contact={contact} contacts={contacts} setContact={setContact} addContact={addContact} contacts={contacts} isvalid={isvalid}  isEdit={isEdit} isopen={isModalOpen}
+    <Header contact={contact} contacts={contacts} setContact={setContact} addContact={addContact}  isvalid={isvalid}  isEdit={isEdit} isopen={isModalOpen}
     setIsopen={setIsModalOpen}
     setIsEdit={setIsEdit} updateContact={updateContact}/>
-    <ContactList contacts={contacts} onEdit={editContact}/>
+    <ContactList contacts={contacts} onEdit={editContact} onDelete={deleteContact}/>
    </main>
 
    

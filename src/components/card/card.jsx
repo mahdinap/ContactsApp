@@ -2,13 +2,17 @@ import Button from "../button/button";
 import styles from "./card.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faStar } from "@fortawesome/free-solid-svg-icons";
-export default function Card({ contact, onEdit }) {
+export default function Card({ contact, onEdit ,onDelete }) {
   const { email, number,firstname,lastname} = contact;
-
+console.log("Card Contact:", contact);
 
   function clickHandler() {
     onEdit(contact);
   }
+  function deleteHandler() {
+    console.log("Contact ID:", contact.id);
+  onDelete(contact.id);
+}
 
   return (
     <div className={styles.container}>
@@ -39,7 +43,7 @@ export default function Card({ contact, onEdit }) {
       </div>
       <div className={styles.btns}>
         <Button value={"Edit"} variant="primary" onClick={clickHandler} />
-        <Button value={"Delete"} variant="danger" />
+        <Button value={"Delete"} variant="danger" onClick={deleteHandler}/>
       </div>
     </div>
   );
