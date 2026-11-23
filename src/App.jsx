@@ -18,6 +18,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         email:"",
 
     })
+    
 function editContact(contact) {
     setSelectedContact(contact);
     setContact(contact);
