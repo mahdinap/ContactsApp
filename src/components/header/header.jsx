@@ -5,8 +5,10 @@ import SearchBar from "../searcbar/searchBar";
 import Select from "../select/select";
 import styles from "./header.module.css"
 import Form from "../form/form";
-export default function Header({contact,contacts,setContact,addContact,isvalid}){
-    const [isopen,setIsopen]=useState(false)
+export default function Header({contact,contacts,setContact,addContact,isvalid,isEdit,
+    setIsEdit,isopen,
+    setIsopen,updateContact }){
+    
     
     function openModal(){
         setIsopen(true)
@@ -15,6 +17,13 @@ export default function Header({contact,contacts,setContact,addContact,isvalid})
     }
     function closeModal(){
         setIsopen(false)
+        setIsEdit(false);
+    setContact({
+        firstname: "",
+        lastname: "",
+        number: "",
+        email: ""
+    });
     }
     return(
         <>
@@ -42,7 +51,7 @@ export default function Header({contact,contacts,setContact,addContact,isvalid})
 
 
         <Modal isopen={isopen} closeModal={closeModal} >
-            <Form contact={contact} setContact={setContact} addContact={addContact} isvalid={isvalid} />
+            <Form contact={contact} setContact={setContact} addContact={addContact} isvalid={isvalid} isEdit={isEdit}  updateContact={updateContact}/>
         </Modal>
         
         </>
