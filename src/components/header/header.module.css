@@ -24,3 +24,26 @@
     padding: 15px;
     border-radius: 50px;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .searchbox {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .groupList {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .groupList li {
+    padding: 10px 14px;
+  }
+}

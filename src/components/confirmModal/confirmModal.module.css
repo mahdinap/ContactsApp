@@ -24,3 +24,9 @@
 .container p {
   margin-bottom: 24px;
 }
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 32px);
+    padding: 20px 16px;
+  }
+}
