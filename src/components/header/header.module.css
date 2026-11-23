@@ -24,6 +24,10 @@
     padding: 15px;
     border-radius: 50px;
 }
+.active {
+  background-color: #1E1B4B !important;
+  color: white !important;
+}
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

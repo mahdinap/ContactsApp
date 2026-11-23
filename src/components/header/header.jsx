@@ -17,6 +17,8 @@ export default function Header({
   isopen,
   setIsopen,
   updateContact,
+  selectedGroup,
+  setSelectedGroup,
 }) {
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
@@ -34,7 +36,7 @@ export default function Header({
       email: "",
     });
   }
-  
+
   return (
     <>
       <div className={styles.container}>
@@ -54,10 +56,37 @@ export default function Header({
       </div>
       <div className={styles.group}>
         <ul className={styles.groupList}>
-          <li>all</li>
-          <li>work</li>
-          <li>friends</li>
-          <li>family</li>
+          <li
+            key={"all"}
+            className={selectedGroup === "all" ? styles.active : ""}
+            onClick={() => setSelectedGroup("all")}
+          >
+            all
+          </li>
+          <li
+            className={selectedGroup === "work" ? styles.active : ""}
+            onClick={() => setSelectedGroup("work")}
+          >
+            work
+          </li>
+          <li
+            className={selectedGroup === "friends" ? styles.active : ""}
+            onClick={() => setSelectedGroup("friends")}
+          >
+            friends
+          </li>
+          <li
+            className={selectedGroup === "family" ? styles.active : ""}
+            onClick={() => setSelectedGroup("family")}
+          >
+            family
+          </li>
+          <li
+            className={selectedGroup === "favorites" ? styles.active : ""}
+            onClick={() => setSelectedGroup("favorites")}
+          >
+            Favorites
+          </li>
         </ul>
       </div>
 
@@ -74,15 +103,15 @@ export default function Header({
         />
       </Modal>
       {isConfirmOpen && (
-  <ConfirmModal
-    onCancel={() => setIsConfirmOpen(false)}
-    onConfirm={() => {
-      updateContact(contact);
-      setIsConfirmOpen(false);
-      closeModal();
-    }}
-  />
-)}
+        <ConfirmModal
+          onCancel={() => setIsConfirmOpen(false)}
+          onConfirm={() => {
+            updateContact(contact);
+            setIsConfirmOpen(false);
+            closeModal();
+          }}
+        />
+      )}
     </>
   );
 }

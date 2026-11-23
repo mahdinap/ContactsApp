@@ -40,6 +40,17 @@
     color: white;
 
 }
+.favorite {
+  color: lightslategrey;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.favoriteActive {
+  color: rgb(245, 245, 43);
+  cursor: pointer;
+  font-size: 20px;
+}
 @media (max-width: 600px) {
   .container {
     padding: 16px;
