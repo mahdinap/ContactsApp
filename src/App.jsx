@@ -5,12 +5,14 @@ import Navbar from "./components/navbar/navbar"
 import ContactList from "./contactList"
 
 import { useState } from "react"
-
+import ConfirmModal from "./components/confirmModal/confirmModal";
 function App() {
   const [isvalid,setIsvalid]=useState(true)
   const [isEdit, setIsEdit] = useState(false);
 const [selectedContact, setSelectedContact] = useState(null);
 const [isModalOpen, setIsModalOpen] = useState(false);
+const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
+const [contactToDelete, setContactToDelete] = useState(null);
   const [contact,setContact]=useState({
         firstname:"",
         lastname:"",
@@ -67,6 +69,10 @@ function editContact(contact) {
     contacts.filter((item) => item.id !== id)
   );
 }
+function requestDelete(id) {
+  setContactToDelete(id);
+  setIsDeleteConfirmOpen(true);
+}
     
   return (
    <>
@@ -75,9 +81,21 @@ function editContact(contact) {
     <Header contact={contact} contacts={contacts} setContact={setContact} addContact={addContact}  isvalid={isvalid}  isEdit={isEdit} isopen={isModalOpen}
     setIsopen={setIsModalOpen}
     setIsEdit={setIsEdit} updateContact={updateContact}/>
-    <ContactList contacts={contacts} onEdit={editContact} onDelete={deleteContact}/>
+    <ContactList contacts={contacts} onEdit={editContact} onDelete={requestDelete}/>
    </main>
-
+{isDeleteConfirmOpen && (
+  <ConfirmModal
+    onCancel={() => {
+      setIsDeleteConfirmOpen(false);
+      setContactToDelete(null);
+    }}
+    onConfirm={() => {
+      deleteContact(contactToDelete);
+      setIsDeleteConfirmOpen(false);
+      setContactToDelete(null);
+    }}
+  />
+)}
    
    
    </>
