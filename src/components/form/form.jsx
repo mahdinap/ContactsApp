@@ -10,7 +10,7 @@ export default function Form({
   editHandler,
   updateContact,
   closeModal,
-  onRequestConfirm
+  onRequestConfirm,
 }) {
   function changeHandler(e) {
     const name = e.target.name;
@@ -58,11 +58,16 @@ export default function Form({
       />
       <div className={styles.group}>
         <label htmlFor="group">select group : </label>
-        <select name="group" id="group">
-          <option value="all">all</option>
+        <select
+          name="group"
+          id="group"
+          value={contact.group}
+          onChange={changeHandler}
+        >
           <option value="family">family</option>
           <option value="friend">friends</option>
           <option value="work">work</option>
+          <option value="other">otherr</option>
         </select>
       </div>
 

@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faStar } from "@fortawesome/free-solid-svg-icons";
 export default function Card({ contact, onEdit ,onDelete }) {
-  const { email, number,firstname,lastname} = contact;
+  const { email, number,firstname,lastname,group} = contact;
 console.log("Card Contact:", contact);
 
   function clickHandler() {
@@ -21,7 +21,7 @@ console.log("Card Contact:", contact);
           <span className={styles.avatar}>M</span>
           <div>
             <span>{firstname} {lastname}</span>
-            <p>Work</p>
+            <p>Group: {group}</p>
           </div>
         </div>
 

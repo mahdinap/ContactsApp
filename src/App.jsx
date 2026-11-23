@@ -13,11 +13,13 @@ const [selectedContact, setSelectedContact] = useState(null);
 const [isModalOpen, setIsModalOpen] = useState(false);
 const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
 const [contactToDelete, setContactToDelete] = useState(null);
+const [selectedGroup, setSelectedGroup] = useState("all");
   const [contact,setContact]=useState({
         firstname:"",
         lastname:"",
         number:"",
         email:"",
+        group: "family"
 
     })
 
@@ -47,6 +49,7 @@ function editContact(contact) {
         lastname:"",
         number:"",
         email:"",
+        group: "family"
 
     })
     console.log(contacts);
