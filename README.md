@@ -1,16 +1,62 @@
-# React + Vite
+# Contact App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive contact management application built with React.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add new contacts
+- Edit existing contacts
+- Delete contacts with confirmation
+- Organize contacts into groups:
+  - Work
+  - Friends
+  - Family
+  - Other
+- Mark contacts as favorites
+- Search contacts by:
+  - First name
+  - Last name
+  - Phone number
+  - Email address
+- Filter contacts by group
+- Search across all groups
+- Responsive design for desktop, tablet, and mobile
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- CSS Modules
+- Font Awesome
+- UUID (`crypto.randomUUID()`)
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+├── components/
+│   ├── button/
+│   ├── card/
+│   ├── confirmModal/
+│   ├── form/
+│   ├── header/
+│   ├── modal/
+│   └── navbar/
+├── App.jsx
+├── contactList.jsx
+└── index.css
+```
+
+## Learning Goals
+
+This project was built to practice:
+
+- React Components
+- Props and State Management
+- React Hooks (`useState`)
+- Event Handling
+- Conditional Rendering
+- Array Methods (`map`, `filter`)
+- Component Communication
+- CSS Modules
+- Responsive Design
