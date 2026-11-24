@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "../button/button";
 import Modal from "../modal/modal";
 import SearchBar from "../searcbar/searchBar";
-import Select from "../select/select";
 import styles from "./header.module.css";
 import Form from "../form/form";
 import ConfirmModal from "../confirmModal/confirmModal";
@@ -54,8 +53,8 @@ setSearchTerm,
       </div>
       <div className={styles.searchbox}>
         <SearchBar searchTerm={searchTerm}
-setSearchTerm={setSearchTerm} />
-        <Select />
+  setSearchTerm={setSearchTerm} />
+       
       </div>
       <div className={styles.group}>
         <ul className={styles.groupList}>
