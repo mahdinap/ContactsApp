@@ -13,9 +13,6 @@ export default function Navbar() {
           </a>
           <span className={styles.title}>Phonebook</span>
         </div>
-
-        <Button value={"All Contacts"} variant="primary"/>
-        <Button value={"Favorits"} />
       </div>
     </div>
       

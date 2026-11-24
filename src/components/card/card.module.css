@@ -51,6 +51,13 @@
   cursor: pointer;
   font-size: 20px;
 }
+.letter,.phone{
+  color: darkcyan;
+  margin-right: 6px;
+}
+.group{
+  margin-top: 15px;
+}
 @media (max-width: 600px) {
   .container {
     padding: 16px;

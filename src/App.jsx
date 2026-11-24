@@ -22,6 +22,8 @@ function App() {
     group: "family",
   });
 
+const [searchTerm, setSearchTerm] = useState("");
+
   function editContact(contact) {
     setSelectedContact(contact);
     setContact(contact);
@@ -71,12 +73,7 @@ function App() {
     setContactToDelete(id);
     setIsDeleteConfirmOpen(true);
   }
-  const filteredContacts =
-    selectedGroup === "all"
-      ? contacts
-      : selectedGroup === "favorites"
-    ? contacts.filter((item) => item.isFavorite)
-    : contacts.filter((item) => item.group === selectedGroup)
+
 
   function toggleFavorite(id) {
   setContacts((contacts) =>
@@ -87,6 +84,27 @@ function App() {
     )
   );
 }
+const filteredContacts = contacts.filter((item) => {
+  if (searchTerm.trim() !== "") {
+    const search = searchTerm.toLowerCase();
+
+    return (
+      item.firstname.toLowerCase().includes(search) ||
+      item.lastname.toLowerCase().includes(search) ||
+      item.number.includes(search) ||
+      item.email.toLowerCase().includes(search)
+    );
+  }
+
+  if (selectedGroup === "all") return true;
+
+  if (selectedGroup === "favorites") {
+    return item.isFavorite;
+  }
+
+  return item.group === selectedGroup;
+});
+
   return (
     <>
       <Navbar />
@@ -104,6 +122,8 @@ function App() {
           updateContact={updateContact}
           selectedGroup={selectedGroup}
           setSelectedGroup={setSelectedGroup}
+          searchTerm={searchTerm}
+setSearchTerm={setSearchTerm}
         />
         <ContactList
           contacts={filteredContacts}

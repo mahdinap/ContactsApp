@@ -23,7 +23,7 @@ export default function Form({
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>New contact</h2>
+      <h2 className={styles.title}>Add New contact</h2>
       <div className={styles.nameField}>
         <Input
           value={contact.firstname}
@@ -74,6 +74,7 @@ export default function Form({
       {!isvalid ? <h1 className={styles.error}>enter valid values</h1> : null}
 
       <Button
+      className={styles.btn}
         value={isEdit ? "Save Changes" : "Add Contact"}
         onClick={isEdit ? editHandler : addContact}
       />

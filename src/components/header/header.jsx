@@ -19,6 +19,8 @@ export default function Header({
   updateContact,
   selectedGroup,
   setSelectedGroup,
+  searchTerm,
+setSearchTerm,
 }) {
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
@@ -51,7 +53,8 @@ export default function Header({
         />
       </div>
       <div className={styles.searchbox}>
-        <SearchBar />
+        <SearchBar searchTerm={searchTerm}
+setSearchTerm={setSearchTerm} />
         <Select />
       </div>
       <div className={styles.group}>

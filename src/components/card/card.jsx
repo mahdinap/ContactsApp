@@ -23,7 +23,7 @@ export default function Card({ contact, onEdit, onDelete, onToggleFavorite }) {
             <span>
               {firstname} {lastname}
             </span>
-            <p>Group: {group}</p>
+            <p className={styles.group}>Group: {group}</p>
           </div>
         </div>
 
@@ -36,17 +36,15 @@ export default function Card({ contact, onEdit, onDelete, onToggleFavorite }) {
         />
       </div>
       <div>
-        <div></div>
         <span>
-          <FontAwesomeIcon icon={faPhone} />
+          <FontAwesomeIcon icon={faPhone} className={styles.phone} />
           {number}
         </span>
       </div>
       <div>
-        <div></div>
         <span>
-          <FontAwesomeIcon icon={faEnvelope} />
-          {email}
+          <FontAwesomeIcon icon={faEnvelope} className={styles.letter}/>
+           {email}
         </span>
       </div>
       <div className={styles.btns}>
