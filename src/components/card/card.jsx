@@ -18,7 +18,7 @@ export default function Card({ contact, onEdit, onDelete, onToggleFavorite }) {
     <div className={styles.container}>
       <div className={styles.idField}>
         <div className={styles.nameField}>
-          <span className={styles.avatar}>M</span>
+          <span className={styles.avatar}>{firstname[0]}</span>
           <div>
             <span>
               {firstname} {lastname}
